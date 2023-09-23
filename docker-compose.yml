@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  rabbitMQ:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  app-rest:
+    build:
+      context: ./poc_rabbitmq-rest
+      dockerfile: Dockerfile
+      target: release_image
+    depends_on:
+      - rabbitMQ
+    environment:
+      RABBITMQ_HOST: rabbitmq
+    ports:
+      - "8080:8080"
+
+  app-calculator:
+    build:
+      context: ./poc_rabbitmq-calculator
+      dockerfile: Dockerfile
+      target: release_image
+    depends_on:
+      - rabbitMQ
+    environment:
+      RABBITMQ_HOST: rabbitmq
