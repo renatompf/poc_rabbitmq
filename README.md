@@ -56,7 +56,7 @@ This module listens for incoming calculation messages from the RabbitMQ queue, p
 
 1. Clone the repository.
    ```shell
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/renatompf/poc_rabbitmq.git
    ```
 
 2. Start all the containers by making.
