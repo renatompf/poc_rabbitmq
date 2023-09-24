@@ -25,15 +25,16 @@ public class OperationService {
 
     private final RabbitTemplate rabbitTemplate;
 
+    private final ObjectMapper objectMapper;
+
     @Autowired
     public OperationService(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
+        objectMapper = new ObjectMapper();
     }
 
     @RabbitListener(queues = RabbitConfiguration.FIRST_QUEUE)
     public void receiveAndProcess(Message msg) throws IOException {
-
-        ObjectMapper objectMapper = new ObjectMapper();
 
         OperationMessage operationMessage = objectMapper.readValue(msg.getBody(), OperationMessage.class);
         logger.info("Message received operationMessage={}", operationMessage);

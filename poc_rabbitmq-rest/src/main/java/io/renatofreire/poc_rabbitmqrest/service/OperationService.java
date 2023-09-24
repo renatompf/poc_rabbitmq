@@ -28,9 +28,9 @@ public class OperationService {
 
 
     @Autowired
-    public OperationService(RabbitTemplate rabbitTemplate, ObjectMapper objectMapper) {
+    public OperationService(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
-        this.objectMapper = objectMapper;
+        this.objectMapper = new ObjectMapper();
     }
 
     public OperationResponse sum(OperationRequest operation)  {
