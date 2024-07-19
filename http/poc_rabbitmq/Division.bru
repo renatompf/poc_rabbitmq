@@ -1,0 +1,18 @@
+meta {
+  name: Division
+  type: http
+  seq: 3
+}
+
+post {
+  url: localhost:8080/operations/division
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "firstNumber" : 55,
+      "secondNumber" : -88.1234567890
+  }
+}

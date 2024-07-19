@@ -1,0 +1,19 @@
+meta {
+  name: Substraction
+  type: http
+  seq: 2
+}
+
+post {
+  url: localhost:8080/operations/substraction
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "firstNumber" : 55,
+      "secondNumber" : 99
+  }
+  
+}

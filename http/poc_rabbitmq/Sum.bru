@@ -1,0 +1,19 @@
+meta {
+  name: Sum
+  type: http
+  seq: 1
+}
+
+post {
+  url: localhost:8080/operations/sum
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "firstNumber" : 55,
+      "secondNumber" : 56756.87540
+  }
+  
+}

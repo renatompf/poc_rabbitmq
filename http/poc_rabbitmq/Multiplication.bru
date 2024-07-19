@@ -1,0 +1,19 @@
+meta {
+  name: Multiplication
+  type: http
+  seq: 4
+}
+
+post {
+  url: localhost:8080/operations/multiplication
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "firstNumber" : 55,
+      "secondNumber" : -88.1234567890
+  }
+  
+}
